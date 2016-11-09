@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Trump Trumper",
+  "version": "1.0",
+  "description": "Trumps Trump with insults.",
+  "icons": { "16": "trump-trumper-16.png", "128": "trump-trumper-128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content_script.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
