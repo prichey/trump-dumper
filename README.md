@@ -1,7 +1,8 @@
-trump-dumper
+Trump Dumper
 =============
 
-Dump Trump. Replace all instances of his name with insults.
+Replace all mention of a certain President-elect with a fitting epithet.
+Keywords: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump"
 
 
 Installation
