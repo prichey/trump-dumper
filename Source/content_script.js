@@ -1,7 +1,7 @@
 walk(document.body);
 
 function getRandomAdj() {
-  return randomChoice([
+  return capitalizeFirstLetter(randomChoice([
     'droning',
     'goatish',
     'infectious',
@@ -22,11 +22,11 @@ function getRandomAdj() {
     'clueless',
     'insane',
     'egotistical'
-  ]);
+  ]));
 }
 
 function getRandomAdj2() {
-  return randomChoice([
+  return capitalizeFirstLetter(randomChoice([
     'beef-witted',
     'full-gorged',
     'half-faced',
@@ -41,11 +41,11 @@ function getRandomAdj2() {
     'thin-skinned',
     'tax-dodging',
     'narcissistic'
-  ]);
+  ]));
 }
 
 function getRandomNoun() {
-  return randomChoice([
+  return capitalizeFirstLetter(randomChoice([
     'hellbeast',
     'fleshbag',
     'dimwit',
@@ -63,7 +63,7 @@ function getRandomNoun() {
     'numpty',
     'fucktrumpet',
     'sociopath'
-  ]);
+  ]));
 }
 
 function capitalizeFirstLetter(string) {
@@ -123,30 +123,29 @@ function handleText(textNode) {
   var v = textNode.nodeValue;
 
   if (v.length && (v.indexOf("Trump") !== -1 || v.indexOf("TRUMP") !== -1)) {
-    v = v.replace(/\b Donald Trump\b/g, ' ' + getRandomInsult(false) + ' Donald Trumptmp');
-    v = v.replace(/\b Donald J. Trump\b/g, ' ' + getRandomInsult(false) + ' Donald J. Trumptmp');
-    v = v.replace(/\b Mr. Trump\b/g, ' ' + getRandomInsult(false) + ' Mr. Trumptmp');
-    v = v.replace(/\b President Trump\b/g, ' ' + getRandomInsult(false, 2) + ' President Trumptmp');
-    v = v.replace(/\b President-elect Trump\b/g, ' ' + getRandomInsult(false, 2) + ' President-elect Trumptmp');
+    v = v.replace(/\b Donald Trump\b/g, ' ' + getRandomInsult(false));
+    v = v.replace(/\b Donald J. Trump\b/g, ' ' + getRandomInsult(false));
+    v = v.replace(/\b Mr. Trump\b/g, ' ' + getRandomInsult(false));
+    v = v.replace(/\b President Trump\b/g, ' ' + getRandomInsult(false, 2));
+    v = v.replace(/\b President-elect Trump\b/g, ' ' + getRandomInsult(false, 2));
 
-    v = v.replace(/\bDonald Trump\b/g, getRandomInsult(true) + ' Donald Trumptmp');
-    v = v.replace(/\bDonald J. Trump\b/g, getRandomInsult(true) + ' Donald J. Trumptmp');
-    v = v.replace(/\bMr. Trump\b/g, getRandomInsult(true) + ' Mr. Trumptmp');
-    v = v.replace(/\bPresident Trump\b/g, getRandomInsult(true, 2) + ' President Trumptmp');
-    v = v.replace(/\bPresident-elect Trump\b/g, getRandomInsult(true, 2) + ' President-elect Trumptmp');
+    v = v.replace(/\bDonald Trump\b/g, getRandomInsult(true));
+    v = v.replace(/\bDonald J. Trump\b/g, getRandomInsult(true));
+    v = v.replace(/\bMr. Trump\b/g, getRandomInsult(true));
+    v = v.replace(/\bPresident Trump\b/g, getRandomInsult(true, 2));
+    v = v.replace(/\bPresident-elect Trump\b/g, getRandomInsult(true, 2));
 
     // leave the other trumps alone
     v = v.replace(/\bIvanka Trump\b/g, 'Ivanka Trumptmp');
     v = v.replace(/\bMelania Trump\b/g, 'Melania Trumptmp');
     v = v.replace(/\bEric Trump\b/g, 'Eric Trumptmp');
 
-    v = v.replace(/\b. Trump\b/g, '. ' + getRandomInsult(true, 1) + ' Trumptmp');
-    v = v.replace(/\b Trump\b/g, ' ' + getRandomInsult(false, 1) + ' Trumptmp');
-    v = v.replace(/\bTrump\b/g, getRandomInsult(true, 1) + ' Trumptmp');
-    v = v.replace(/\bTRUMP\b/g, getRandomInsult(true, 1).toUpperCase() + ' TRUMPTMP');
+    v = v.replace(/\b. Trump\b/g, '. ' + getRandomInsult(true, 1));
+    v = v.replace(/\b Trump\b/g, ' ' + getRandomInsult(false, 1));
+    v = v.replace(/\bTrump\b/g, getRandomInsult(true, 1));
+    v = v.replace(/\bTRUMP\b/g, getRandomInsult(true, 1).toUpperCase());
 
     v = v.replace(/\bTrumptmp\b/g, 'Trump');
-    v = v.replace(/\bTRUMPTMP\b/g, 'TRUMP');
   }
 
   textNode.nodeValue = v;
