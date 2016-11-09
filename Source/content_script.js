@@ -2,29 +2,26 @@ walk(document.body);
 
 function getRandomAdj() {
   return randomChoice([
-    'artless',
     'droning',
-    'frothy',
     'goatish',
     'infectious',
-    'lumpish',
     'mammering',
     'mangled',
     'puking',
     'puny',
     'unmuzzled',
     'vain',
-    'venomed',
+    'dangerous',
     'villainous',
     'warped',
     'poisonous',
-    'fishified',
     'wart-necked',
-    'weaselheaded',
-    'mangled',
     'clueless',
     'bloviating',
     'toupéd',
+    'clueless',
+    'insane',
+    'egotistical'
   ]);
 }
 
@@ -36,14 +33,14 @@ function getRandomAdj2() {
     'idle-headed',
     'ill-nurtured',
     'rump-fed',
-    'tickle-brained',
     'toad-spotted',
-    'unwashed',
     'tiny-fingered',
     'Cheeto-faced',
     'ferret-wearing',
     'weapons-grade',
-    'utter',
+    'thin-skinned',
+    'tax-dodging',
+    'narcissistic'
   ]);
 }
 
@@ -59,15 +56,13 @@ function getRandomNoun() {
     'cocksplat',
     'shitgibbon',
     'tit',
-    'twonk',
     'doughnut',
     'spoon',
-    'gobshite',
     'fucknugget',
     'apricot hellbeast',
-    'eejit',
     'numpty',
     'fucktrumpet',
+    'sociopath'
   ]);
 }
 
