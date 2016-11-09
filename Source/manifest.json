@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Trump Trumper",
-  "version": "1.1",
-  "description": "Trumps Trump with insults.",
-  "icons": { "16": "trump-trumper-16.png", "128": "trump-trumper-128.png" },
+  "name": "Trump Dumper",
+  "version": "1.2",
+  "description": "Dump Trump. Replace all instances of his name with insults.",
+  "icons": { "16": "trump-dumper-16.png", "128": "trump-dumper-128.png" },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
