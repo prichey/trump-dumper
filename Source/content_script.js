@@ -1,7 +1,7 @@
 walk(document.body);
 
 function getRandomAdj() {
-  return capitalizeFirstLetter(randomChoice([
+  return randomChoice([
     'droning',
     'goatish',
     'infectious',
@@ -22,7 +22,6 @@ function getRandomAdj() {
     'rancid',
     'narcissistic',
     'imploding',
-    'empty',
     'vile',
     'sinister',
     'impotent',
@@ -31,8 +30,6 @@ function getRandomAdj() {
     'festering',
     'infected',
     'repugnant',
-    'moist',
-    'rapey',
     'racist',
     'fat',
     'damaged',
@@ -40,16 +37,13 @@ function getRandomAdj() {
     'puerile',
     'inflatable',
     'underwhelming'
-  ]));
+  ]);
 }
 
 function getRandomAdj2() {
-  return capitalizeFirstLetter(randomChoice([
-    'beef-witted',
-    'full-gorged',
-    'half-faced',
+  return randomChoice([
+    'two-faced',
     'idle-headed',
-    'ill-nurtured',
     'rump-fed',
     'toad-spotted',
     'tiny-fingered',
@@ -71,32 +65,29 @@ function getRandomAdj2() {
     'tax-dodging',
     'hail-damaged',
     'small-handed',
-    'ass-mouthed',
-    'over-affirmed',
+    'overly-affirmed',
     'wart-necked',
     'empty-headed',
     'mouth-breathing',
-  ]));
+  ]);
 }
 
 function getRandomNoun() {
-  return capitalizeFirstLetter(randomChoice([
+  return randomChoice([
     'fleshbag',
     'dimwit',
     'horn-beast',
     'minnow',
     'pignut',
     'toad',
-    'shitgibbon',
+    'louse',
     'tit',
     'doughnut',
     'spoon',
-    'fucknugget',
     'apricot hellbeast',
     'numpty',
     'sociopath',
     'circus peanut',
-    'asshat',
     'contagion',
     'fartbrain',
     'garbagemonger',
@@ -109,11 +100,19 @@ function getRandomNoun() {
     'casserole',
     'compost pile',
     'dumpster fire',
-  ]));
+    'bigot'
+  ]);
 }
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function titleCase(str) {
+  return str.toLowerCase()
+            .split(' ')
+            .map(i => i[0].toUpperCase() + i.substring(1))
+            .join(' ');
 }
 
 function randomChoice(choices) {
@@ -121,7 +120,7 @@ function randomChoice(choices) {
   return choices[index];
 }
 
-function getRandomInsult(capitalize, choice) {
+function getRandomInsult(choice) {
   if (!choice) choice = Math.floor(Math.random() * 2) + 1;
   var insult = '';
 
@@ -134,8 +133,7 @@ function getRandomInsult(capitalize, choice) {
       break;
   }
 
-  if (!!capitalize) insult = capitalizeFirstLetter(insult);
-  return insult;
+  return titleCase(insult);
 }
 
 function walk(node) {
@@ -169,27 +167,27 @@ function handleText(textNode) {
   var v = textNode.nodeValue;
 
   if (v.length && (v.indexOf("Trump") !== -1 || v.indexOf("TRUMP") !== -1)) {
-    v = v.replace(/\b Donald Trump\b/g, ' ' + getRandomInsult(false));
-    v = v.replace(/\b Donald J. Trump\b/g, ' ' + getRandomInsult(false));
-    v = v.replace(/\b Mr. Trump\b/g, ' ' + getRandomInsult(false));
-    v = v.replace(/\b President Trump\b/g, ' ' + getRandomInsult(false, 2));
-    v = v.replace(/\b President-elect Trump\b/g, ' ' + getRandomInsult(false, 2));
+    v = v.replace(/\b Donald Trump\b/g, ' ' + getRandomInsult());
+    v = v.replace(/\b Donald J. Trump\b/g, ' ' + getRandomInsult());
+    v = v.replace(/\b Mr. Trump\b/g, ' ' + getRandomInsult());
+    v = v.replace(/\b President Trump\b/g, ' ' + getRandomInsult(2));
+    v = v.replace(/\b President-elect Trump\b/g, ' ' + getRandomInsult(2));
 
-    v = v.replace(/\bDonald Trump\b/g, getRandomInsult(true));
-    v = v.replace(/\bDonald J. Trump\b/g, getRandomInsult(true));
-    v = v.replace(/\bMr. Trump\b/g, getRandomInsult(true));
-    v = v.replace(/\bPresident Trump\b/g, getRandomInsult(true, 2));
-    v = v.replace(/\bPresident-elect Trump\b/g, getRandomInsult(true, 2));
+    v = v.replace(/\bDonald Trump\b/g, getRandomInsult());
+    v = v.replace(/\bDonald J. Trump\b/g, getRandomInsult());
+    v = v.replace(/\bMr. Trump\b/g, getRandomInsult());
+    v = v.replace(/\bPresident Trump\b/g, getRandomInsult(2));
+    v = v.replace(/\bPresident-elect Trump\b/g, getRandomInsult(2));
 
     // leave the other trumps alone
     v = v.replace(/\bIvanka Trump\b/g, 'Ivanka Trumptmp');
     v = v.replace(/\bMelania Trump\b/g, 'Melania Trumptmp');
     v = v.replace(/\bEric Trump\b/g, 'Eric Trumptmp');
 
-    v = v.replace(/\b. Trump\b/g, '. ' + getRandomInsult(true, 1));
-    v = v.replace(/\b Trump\b/g, ' ' + getRandomInsult(false, 1));
-    v = v.replace(/\bTrump\b/g, getRandomInsult(true, 1));
-    v = v.replace(/\bTRUMP\b/g, getRandomInsult(true, 1).toUpperCase());
+    v = v.replace(/\b. Trump\b/g, '. ' + getRandomInsult(1));
+    v = v.replace(/\b Trump\b/g, ' ' + getRandomInsult(1));
+    v = v.replace(/\bTrump\b/g, getRandomInsult(1));
+    v = v.replace(/\bTRUMP\b/g, getRandomInsult(1).toUpperCase());
 
     v = v.replace(/\bTrumptmp\b/g, 'Trump');
   }
