@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Trump Dumper",
-  "version": "1.3",
-  "description": "Replace all mention of a certain President-elect with a fitting epithet.",
+  "version": "1.4",
+  "description": "Replace all mention of Donald J. Trump with an insulting epithet.",
   "icons": { "16": "trump-dumper-16.png", "128": "trump-dumper-128.png" },
   "content_scripts": [
     {

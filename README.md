@@ -1,8 +1,9 @@
 Trump Dumper
 =============
 
-Replace all mention of a certain President-elect with a fitting epithet.
-Keywords: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump"
+Replace all mention of Donald J. Trump with an insulting epithet.
+
+Keywords: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump".
 
 
 Installation

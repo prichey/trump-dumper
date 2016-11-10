@@ -167,12 +167,6 @@ function handleText(textNode) {
   var v = textNode.nodeValue;
 
   if (v.length && (v.indexOf("Trump") !== -1 || v.indexOf("TRUMP") !== -1)) {
-    v = v.replace(/\b Donald Trump\b/g, ' ' + getRandomInsult());
-    v = v.replace(/\b Donald J. Trump\b/g, ' ' + getRandomInsult());
-    v = v.replace(/\b Mr. Trump\b/g, ' ' + getRandomInsult());
-    v = v.replace(/\b President Trump\b/g, ' ' + getRandomInsult(2));
-    v = v.replace(/\b President-elect Trump\b/g, ' ' + getRandomInsult(2));
-
     v = v.replace(/\bDonald Trump\b/g, getRandomInsult());
     v = v.replace(/\bDonald J. Trump\b/g, getRandomInsult());
     v = v.replace(/\bMr. Trump\b/g, getRandomInsult());
