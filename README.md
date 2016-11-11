@@ -1,9 +1,10 @@
 Trump Dumper
 =============
 
-Replace all mention of Donald J. Trump with an insulting epithet.
+Replaces all mention of Donald J. Trump with a randomly generated insulting epithet.
 
-Keywords: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump".
+Words that will be replaced: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump".
+Example insults: "Poisonous, Cheeto-faced Contagion", "Underwhelming Leech", "Toupéd, Overly-affirmed Fleshbag", "Sinister, Small-handed Circus Peanut", "Villainous Horn-beast".
 
 
 Installation
