@@ -1,6 +1,8 @@
 Trump Dumper
 =============
 
+Fork of [cloud-to-butt](https://github.com/panicsteve/cloud-to-butt).
+
 Replaces all mention of Donald J. Trump with a randomly generated insulting epithet.
 
 Words that will be replaced: "Donald Trump", "Donald J. Trump", "Mr. Trump", "President Trump", "President-elect Trump", "Trump".
